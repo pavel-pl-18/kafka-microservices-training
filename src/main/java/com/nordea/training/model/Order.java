@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
-public class Order {
+public class Order implements Cloneable {
     private String orderId;
     private Long productId;
     private Integer quantity;
@@ -72,4 +72,9 @@ public class Order {
     public void setStatus(OrderStatus status) {
         this.status = status;
     }
+
+    public Order clone() throws CloneNotSupportedException {
+        return (Order)super.clone();
+    }
+
 }

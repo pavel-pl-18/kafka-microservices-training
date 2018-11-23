@@ -25,6 +25,9 @@ public class OrdersDatabase {
         orderChange.setOld(oldOrder);
         orderChange.setCurrent(order);
         orderStateChangeProducer.send(orderChange);
+    }
 
+    public Order getById(String id) {
+        return db.getOrDefault(id, null);
     }
 }
