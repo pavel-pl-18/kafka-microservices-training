@@ -11,6 +11,7 @@ public class Order {
     private Long productId;
     private Integer quantity;
     private Long userId;
+    private OrderStatus status;
     private LocalDateTime createdAt;
 
     public Long getProductId() {
@@ -62,5 +63,13 @@ public class Order {
                 ", userId=" + userId +
                 ", createdAt=" + createdAt +
                 '}';
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
     }
 }

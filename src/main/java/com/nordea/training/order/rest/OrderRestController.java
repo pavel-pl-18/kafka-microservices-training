@@ -1,6 +1,7 @@
 package com.nordea.training.order.rest;
 
 import com.nordea.training.model.Order;
+import com.nordea.training.model.OrderStatus;
 import com.nordea.training.order.OrdersDatabase;
 import com.nordea.training.order.event.OrderCreatedNotificationProducer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class OrderRestController {
         order.setUserId(orderCreateRequest.getUserId());
         order.setOrderId(UUID.randomUUID().toString());
         order.setCreatedAt(LocalDateTime.now());
+        order.setStatus(OrderStatus.CREATED);
         db.save(order);
         orderCreatedNotificationProducer.send(order);
 
