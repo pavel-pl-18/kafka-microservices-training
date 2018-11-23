@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.nordea.training.avromodel",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "string"
+    },
+    {
+      "name": "productId",
+      "type": "long"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "userId",
+      "type": "long"
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "OrderStatus",
+        "symbols": [
+          "CREATED",
+          "PREPARED_TO_SHIPPING",
+          "SHIPPED"
+        ]
+      }
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type" : "long",
+        "logicalType" : "timestamp-millis"
+      }
+    }
+  ]
+}
