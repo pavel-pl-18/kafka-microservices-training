@@ -42,6 +42,7 @@ public class OrdersDatabase {
         orderAvro.setStatus(com.nordea.training.avromodel.OrderStatus.valueOf(order.getStatus().toString()));
         orderAvro.setUserId(order.getUserId());
         orderAvro.setCreatedAt(new DateTime(order.getCreatedAt().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()));
+        orderAvro.setAsGift(true);
         orderAvroProducer.send(orderAvro);
     }
 

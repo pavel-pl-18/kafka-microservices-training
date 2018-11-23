@@ -37,6 +37,11 @@
         "type" : "long",
         "logicalType" : "timestamp-millis"
       }
+    },
+    {
+      "name": "asGift",
+      "type": ["null", "boolean"],
+      "default": null
     }
   ]
 }
