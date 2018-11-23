@@ -1,6 +1,6 @@
 package com.nordea.training.order.rest;
 
-import com.nordea.training.order.Order;
+import com.nordea.training.model.Order;
 import com.nordea.training.order.OrdersDatabase;
 import com.nordea.training.order.event.OrderCreatedNotificationProducer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

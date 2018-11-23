@@ -1,4 +1,8 @@
-package com.nordea.training.order;
+package com.nordea.training.model;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -47,5 +51,16 @@ public class Order {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId='" + orderId + '\'' +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                ", userId=" + userId +
+                ", createdAt=" + createdAt +
+                '}';
     }
 }
